@@ -100,6 +100,9 @@ function renderPage() {
     if (path === '#/gallery') {
       initGallery();
     }
+    if (path === '#/contact') {
+      initContact();
+    }
 
     // Initialize fade-in animations
     initFadeIn();
@@ -122,6 +125,42 @@ async function init() {
   document.documentElement.setAttribute('lang', currentLang);
   await loadTranslations(currentLang);
   renderPage();
+}
+
+// --- Contact Form ---
+function initContact() {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = '送信中...';
+
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/gemgraphy@outlook.jp', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: formData,
+      });
+
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('contact-success').style.display = 'block';
+      } else {
+        throw new Error();
+      }
+    } catch {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+      alert('送信に失敗しました。時間をおいて再度お試しください。');
+    }
+  });
 }
 
 // Listen for hash changes

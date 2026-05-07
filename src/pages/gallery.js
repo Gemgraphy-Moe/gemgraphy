@@ -1,33 +1,49 @@
 /**
- * Gallery Page
+ * Gallery Page — Year-grouped layout
  */
 export function renderGallery(t) {
-  // Placeholder gallery images
-  const images = [
-    { src: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&q=80', alt: 'Work 1', class: '' },
-    { src: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80', alt: 'Work 2', class: 'gallery-grid__item--tall' },
-    { src: 'https://images.unsplash.com/photo-1551913902-c92207136625?w=800&q=80', alt: 'Work 3', class: '' },
-    { src: 'https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?w=800&q=80', alt: 'Work 4', class: 'gallery-grid__item--wide' },
-    { src: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800&q=80', alt: 'Work 5', class: '' },
-    { src: 'https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=800&q=80', alt: 'Work 6', class: '' },
-    { src: 'https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=800&q=80', alt: 'Work 7', class: '' },
-    { src: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&q=80', alt: 'Work 8', class: '' },
-    { src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80', alt: 'Work 9', class: '' },
+  const base = import.meta.env.BASE_URL;
+
+  const galleryData = [
+    { year: 2026, files: ['2026-01.JPG', '2026-02.JPG', '2026-03.jpg'] },
+    { year: 2025, files: ['2025-01.JPG', '2025-02.jpg', '2025-03.jpg', '2025-04.jpg', '2025-05.jpeg', '2025-06.jpg', '2025-07.jpg', '2025-08.JPG'] },
+    { year: 2024, files: ['2024-01.jpg', '2024-02.jpg', '2024-03.jpg', '2024-04.JPEG', '2024-05.JPG', '2024-06.jpg', '2024-07.JPG', '2024-08.jpg', '2024-09.jpg', '2024-10.jpg'] },
+    { year: 2023, files: ['2023-01.jpg', '2023-02.jpg', '2023-03.JPG', '2023-04.jpg', '2023-05.JPG', '2023-06.JPG', '2023-07.JPG', '2023-08.jpg'] },
+    { year: 2022, files: ['2022-01.JPG', '2022-02.JPG', '2022-03.JPG'] },
+    { year: 2019, files: ['2019-01.JPG'] },
+    { year: 2018, files: ['2018-01.jpg'] },
+    { year: 2016, files: ['2016-01.PNG'] },
+    { year: 2015, files: ['2015-01.JPG', '2015-02.JPG', '2015-03.JPG', '2015-04.JPG', '2015-05.JPG', '2015-06.JPG', '2015-07.JPG', '2015-08.JPG', '2015-09.JPG', '2015-10.JPG', '2015-11.JPG'] },
   ];
 
-  const gridItems = images
-    .map(
-      (img, i) =>
-        `<div class="gallery-grid__item ${img.class} fade-in fade-in--delay-${(i % 4) + 1}" data-gallery-index="${i}">
-          <img src="${img.src}" alt="${img.alt}" loading="lazy" />
-        </div>`
-    )
-    .join('');
+  const yearSections = galleryData.map(({ year, files }) => {
+    const items = files
+      .map(
+        (file, i) =>
+          `<div class="gallery-year__item fade-in fade-in--delay-${(i % 4) + 1}">
+            <img src="${base}image/Gallery/${file}" alt="${year}" loading="lazy" />
+          </div>`
+      )
+      .join('');
+
+    return `
+      <div class="gallery-year">
+        <div class="gallery-year__header fade-in">
+          <p class="text-overline">Works</p>
+          <h2 class="gallery-year__title">${year}</h2>
+          <hr class="divider divider--center" />
+        </div>
+        <div class="gallery-year__grid" data-count="${Math.min(files.length, 3)}">
+          ${items}
+        </div>
+      </div>
+    `;
+  }).join('');
 
   return `
     <!-- Page Hero -->
     <section class="page-hero">
-      <div class="page-hero__bg" style="background-image: url('https://images.unsplash.com/photo-1551913902-c92207136625?w=1920&q=80');"></div>
+      <div class="page-hero__bg" style="background-image: url('${base}image/Gallery/Hero.JPEG');"></div>
       <div class="hero__overlay"></div>
       <div class="page-hero__content">
         <h1 class="page-hero__title">${t.gallery.heroTitle}</h1>
@@ -45,11 +61,11 @@ export function renderGallery(t) {
       </div>
     </section>
 
-    <!-- Gallery Grid -->
+    <!-- Gallery by Year -->
     <section style="padding-bottom: var(--space-section);">
       <div class="container">
-        <div class="gallery-grid" id="gallery-grid">
-          ${gridItems}
+        <div class="gallery-years" id="gallery-grid">
+          ${yearSections}
         </div>
       </div>
     </section>
@@ -74,7 +90,7 @@ export function initGallery() {
   if (!grid || !modal) return;
 
   grid.addEventListener('click', (e) => {
-    const item = e.target.closest('.gallery-grid__item');
+    const item = e.target.closest('.gallery-year__item');
     if (!item) return;
 
     const img = item.querySelector('img');

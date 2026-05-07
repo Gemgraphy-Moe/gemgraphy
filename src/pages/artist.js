@@ -24,7 +24,7 @@ export function renderArtist(t) {
       <!-- Portrait -->
       <div class="artist-portrait fade-in">
         <div class="artist-portrait__frame">
-          <img src="https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=900&q=80" alt="${a.founderName}" loading="lazy" />
+          <img src="${import.meta.env.BASE_URL}image/Profile/profile.png" alt="${a.founderName}" loading="lazy" />
         </div>
       </div>
 

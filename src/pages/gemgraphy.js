@@ -75,7 +75,7 @@ export function renderGemgraphy(t) {
     <!-- Photo Break -->
     <section class="photo-break fade-in">
       <div class="photo-break__image">
-        <img src="https://images.unsplash.com/photo-1551913902-c92207136625?w=1600&q=80" alt="Gemgraphy" loading="lazy" />
+        <img src="${import.meta.env.BASE_URL}image/Gemgraphy/gemgraphy-01.JPG" alt="Gemgraphy" loading="lazy" />
       </div>
     </section>
 
@@ -98,7 +98,7 @@ export function renderGemgraphy(t) {
       <div class="container">
         <div class="content-block fade-in">
           <div class="content-block__image">
-            <img src="https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=800&q=80" alt="素材と表現" loading="lazy" />
+            <img src="${import.meta.env.BASE_URL}image/Gemgraphy/gemgraphy-02.JPG" alt="素材と表現" loading="lazy" />
           </div>
           <div class="content-block__text">
             <p class="text-overline">${g.materialsOverline}</p>
@@ -133,7 +133,7 @@ export function renderGemgraphy(t) {
     <!-- Photo Break -->
     <section class="photo-break fade-in">
       <div class="photo-break__image">
-        <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=1600&q=80" alt="制作" loading="lazy" />
+        <img src="${import.meta.env.BASE_URL}image/Gemgraphy/gemgraphy-03.JPEG" alt="制作" loading="lazy" />
       </div>
     </section>
 

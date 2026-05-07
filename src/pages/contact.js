@@ -9,7 +9,7 @@ export function renderContact(t) {
     return `
     <!-- Page Hero -->
     <section class="page-hero">
-      <div class="page-hero__bg" style="background-image: url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1920&q=80');"></div>
+      <div class="page-hero__bg" style="background-image: url('${import.meta.env.BASE_URL}image/Contact/hero.JPG');"></div>
       <div class="hero__overlay"></div>
       <div class="page-hero__content">
         <h1 class="page-hero__title">${t.contact.heroTitle}</h1>
@@ -27,7 +27,10 @@ export function renderContact(t) {
           <p class="text-body">${t.contact.desc}</p>
         </div>
 
-        <form class="contact-form fade-in" id="contact-form" onsubmit="return false;">
+        <div id="contact-success" style="display:none; text-align:center; padding: var(--space-xl) 0;">
+          <p class="text-body">お問い合わせありがとうございます。<br>内容を確認後、ご連絡いたします。</p>
+        </div>
+        <form class="contact-form fade-in" id="contact-form">
           <div class="form-group">
             <label for="contact-name">${t.contact.labelName}</label>
             <input type="text" id="contact-name" name="name" required />

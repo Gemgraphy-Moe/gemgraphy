@@ -39,7 +39,7 @@ export function renderSoshokuSho(t) {
   return `
     <!-- Hero — Extended with lead text -->
     <section class="hero hero--page">
-      <div class="hero__bg" style="background-image: url('https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1920&q=80');"></div>
+      <div class="hero__bg" style="background-image: url('${import.meta.env.BASE_URL}image/Soshoku-sho/hero.jpg');"></div>
       <div class="hero__overlay"></div>
       <div class="hero__content">
         <p class="text-overline" style="margin-bottom: var(--space-sm); color: var(--color-accent-light);">${s.heroSubtitle}</p>
@@ -70,7 +70,7 @@ export function renderSoshokuSho(t) {
     <!-- Photo Break 1 -->
     <section class="photo-break fade-in">
       <div class="photo-break__image">
-        <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=1600&q=80" alt="装飾書の世界" loading="lazy" />
+        <img src="${import.meta.env.BASE_URL}image/Soshoku-sho/Soshoku-sho-01.jpg" alt="装飾書の世界" loading="lazy" />
       </div>
     </section>
 
@@ -105,7 +105,7 @@ export function renderSoshokuSho(t) {
       <div class="container">
         <div class="content-block fade-in">
           <div class="content-block__image">
-            <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80" alt="Gemgraphy" loading="lazy" />
+            <img src="${import.meta.env.BASE_URL}image/Soshoku-sho/Gemgraphy.JPG" alt="Gemgraphy" loading="lazy" />
           </div>
           <div class="content-block__text">
             <p class="text-overline">Gemgraphy</p>
@@ -123,7 +123,7 @@ export function renderSoshokuSho(t) {
       <div class="container">
         <div class="content-block content-block--reverse fade-in">
           <div class="content-block__image">
-            <img src="https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?w=800&q=80" alt="Beadsgraphy" loading="lazy" />
+            <img src="${import.meta.env.BASE_URL}image/Soshoku-sho/beadsgraphy.jpg" alt="Beadsgraphy" loading="lazy" />
           </div>
           <div class="content-block__text">
             <p class="text-overline">Beadsgraphy</p>
@@ -139,7 +139,7 @@ export function renderSoshokuSho(t) {
     <!-- Photo Break 2 -->
     <section class="photo-break fade-in">
       <div class="photo-break__image">
-        <img src="https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=1600&q=80" alt="光と素材" loading="lazy" />
+        <img src="${import.meta.env.BASE_URL}image/Soshoku-sho/Soshoku-sho-02.jpg" alt="光と素材" loading="lazy" />
       </div>
     </section>
 

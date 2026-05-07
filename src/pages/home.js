@@ -5,7 +5,7 @@ export function renderHome(t) {
   return `
     <!-- Hero -->
     <section class="hero">
-      <div class="hero__bg" style="background-image: url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1920&q=80');"></div>
+      <div class="hero__bg" style="background-image: url('${import.meta.env.BASE_URL}image/top/hero.JPG');"></div>
       <div class="hero__overlay"></div>
       <div class="hero__content">
         <h1 class="hero__title hero__title--jp">${t.hero.title}</h1>
@@ -36,7 +36,7 @@ export function renderHome(t) {
         <div class="pillars">
           <a href="#/soshoku-sho" class="pillar fade-in fade-in--delay-1">
             <div class="pillar__image-wrap">
-              <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&q=80" alt="装飾書" />
+              <img src="${import.meta.env.BASE_URL}image/top/soshoku-sho.JPG" alt="装飾書" />
             </div>
             <p class="text-overline pillar__overline">${t.home.pillar1Overline}</p>
             <h3 class="heading-3 pillar__title">${t.home.pillar1Title}</h3>
@@ -44,7 +44,7 @@ export function renderHome(t) {
           </a>
           <a href="#/gemgraphy" class="pillar fade-in fade-in--delay-2">
             <div class="pillar__image-wrap">
-              <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&q=80" alt="Gemgraphy" />
+              <img src="${import.meta.env.BASE_URL}image/top/gemgraphy.JPG" alt="Gemgraphy" />
             </div>
             <p class="text-overline pillar__overline">${t.home.pillar2Overline}</p>
             <h3 class="heading-3 pillar__title">${t.home.pillar2Title}</h3>
@@ -52,7 +52,7 @@ export function renderHome(t) {
           </a>
           <a href="#/beadsgraphy" class="pillar fade-in fade-in--delay-3">
             <div class="pillar__image-wrap">
-              <img src="https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?w=600&q=80" alt="Beadsgraphy" />
+              <img src="${import.meta.env.BASE_URL}image/top/beadsgraphy.JPEG" alt="Beadsgraphy" />
             </div>
             <p class="text-overline pillar__overline">${t.home.pillar3Overline}</p>
             <h3 class="heading-3 pillar__title">${t.home.pillar3Title}</h3>
