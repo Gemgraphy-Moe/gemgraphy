@@ -1,4 +1,4 @@
-{
+﻿{
   "site": {
     "title": "Gemgraphy — 装飾書の芸術",
     "description": "日本の書道文化を基盤とした新しい芸術表現"
@@ -7,7 +7,7 @@
     "home": "トップ",
     "soshokuSho": "装飾書",
     "gemgraphy": "Gemgraphy",
-    "beadsgraphy": "Beadsgraphy",
+    "beadsgraphy": "Beadsgraphy®",
     "artist": "認定作家",
     "gallery": "ギャラリー",
     "contact": "お問い合わせ"
@@ -22,7 +22,7 @@
     "introOverline": "Art Form",
     "introTitle": "装飾書の世界へ",
     "introDesc1": "日本の書道文化を起点に生まれた、\n光と素材で想いを立体化する表現芸術 ―― 装飾書。",
-    "introDesc2": "その中に息づく\nより深い芸術性を追求する Gemgraphy（ジェムグラフィー） と\n体験へとひらかれた Beadsgraphy（ビーズグラフィー）。",
+    "introDesc2": "その中に息づく\nより深い芸術性を追求する Gemgraphy（ジェムグラフィー） と\n体験へとひらかれた Beadsgraphy®（ビーズグラフィー®）。",
     "introDesc3": "静けさと輝きが調和する世界へ。",
     "pillar1Overline": "Expression Genre",
     "pillar1Title": "装飾書",
@@ -31,7 +31,7 @@
     "pillar2Title": "Gemgraphy",
     "pillar2Desc": "象徴性・素材・空間性を融合した、芸術的核としての表現形式。",
     "pillar3Overline": "Experience",
-    "pillar3Title": "Beadsgraphy",
+    "pillar3Title": "Beadsgraphy®",
     "pillar3Desc": "体験を通じて文化に触れる、表現芸術への入口。",
     "ctaText": "ご相談ください"
   },
@@ -61,8 +61,8 @@
     "systemDesc": "装飾書は、書の美しさに装飾表現を融合させた一つの表現ジャンルです。\nその中には、目的や表現の深度に応じた形式があります。",
     "gemgraphyTitle": "Gemgraphy（ジェムグラフィー）",
     "gemgraphyDesc": "装飾書の上位表現形式。\n宝石や高品質素材、箔、光、立体構造などを用い、\nより豊かな表現を追求します。\n\n創始者および認定技術者によって制作される、\n装飾書の芸術性を深く表現した形式です。\n空間表現や展示作品としての展開も可能です。",
-    "beadsgraphyTitle": "Beadsgraphy（ビーズグラフィー）",
-    "beadsgraphyDesc": "装飾書の普及・体験型表現。\n書道用紙とビーズなどの素材を用い、\n一般の方でも制作体験が可能です。\n\n文化に触れ、表現の楽しさを体験する入口として、\n教育的・文化的な役割を担います。",
+    "beadsgraphyTitle": "Beadsgraphy®（ビーズグラフィー®）",
+    "beadsgraphyDesc":"装飾書の普及・体験型表現。\n書道用紙とビーズなどの素材を用い、\n一般の方でも制作体験が可能です。\n\n文化に触れ、表現の楽しさを体験する入口として、\n教育的・文化的な役割を担います。",
     "spaceOverline": "In Space",
     "spaceTitle": "空間の中での装飾書",
     "spaceBody1": "装飾書は、単なる作品としてだけでなく、\n空間の中で静かな存在感を放ちます。",
@@ -88,11 +88,12 @@
     ],
     "cultureClosing": "を体現する、新しい表現領域です。",
     "linkGemgraphy": "Gemgraphyについて",
-    "linkBeadsgraphy": "Beadsgraphyについて",
+    "linkBeadsgraphy": "Beadsgraphy®について",
     "learnMore": "詳しく知る"
   },
   "gemgraphy": {
     "heroTitle": "Gemgraphy",
+    "heroTitleSub": "ジェムグラフィー",
     "heroSub": "文字の象徴性を、光と素材によって深く表現する。\n装飾書の芸術性を追求した表現形式です。",
     "heroSub2": "静けさの中に宿る輝きが、空間に穏やかな存在感をもたらします。",
     "heroCta": "相談する",
@@ -157,17 +158,17 @@
     "ctaLink": "問い合わせる"
   },
   "beadsgraphy": {
-    "heroTitle": "Beadsgraphy",
-    "heroTitleSub": "ビーズグラフィー",
+    "heroTitle": "Beadsgraphy®",
+    "heroTitleSub": "ビーズグラフィー®",
     "heroSub": "書くこと、飾ること、感じること。",
     "heroSub2": "文字と向き合う時間を、\n自分らしい表現へと広げていく体験です。",
-    "whatOverline": "What is Beadsgraphy",
-    "whatTitle": "Beadsgraphyとは",
-    "whatBody1": "Beadsgraphyは、装飾書の表現に触れるための体験型アートです。",
+    "whatOverline": "What is Beadsgraphy®",
+    "whatTitle": "Beadsgraphy®とは",
+    "whatBody1": "Beadsgraphy®は、装飾書の表現に触れるための体験型アートです。",
     "whatBody2": "書いた文字にビーズや装飾素材を用いて彩りを加え、\n自分の感性に導かれるまま表現を完成させていきます。",
     "whatBody3": "完成した作品は、\n作る過程そのものを映し出す、\nその人らしい一点となります。",
     "appealOverline": "Appeal",
-    "appealTitle": "Beadsgraphyの魅力",
+    "appealTitle": "Beadsgraphy®の魅力",
     "appeal1Title": "表現する楽しさに出会う",
     "appeal1Desc": "書くことと装飾することを通して、\n自分の感性を自由に表現する喜びを体験できます。",
     "appeal2Title": "心と向き合う穏やかな時間",
@@ -178,7 +179,7 @@
     "appeal4Desc": "芸術的な表現に触れる第一歩として、\n誰でも安心して体験できます。",
     "flowOverline": "Experience Flow",
     "flowTitle": "体験の流れ",
-    "flowDesc": "Beadsgraphyでは、書くことから装飾までの過程を通して作品を完成させます。",
+    "flowDesc": "Beadsgraphy®では、書くことから装飾までの過程を通して作品を完成させます。",
     "flowSteps": [
       "文字を選ぶ",
       "筆で丁寧に書く",
@@ -189,7 +190,7 @@
     "flowClosing": "このプロセスを通して、\n自分自身の感性と自然に向き合う時間が生まれます。",
     "relationOverline": "Connection",
     "relationTitle": "Gemgraphyとの関係",
-    "relationBody1": "Beadsgraphyは、装飾書の表現に触れる入口として位置づけられています。",
+    "relationBody1": "Beadsgraphy®は、装飾書の表現に触れる入口として位置づけられています。",
     "relationBody2": "より深い芸術表現を追求した形式として、\nGemgraphyがあります。",
     "relationBody3": "体験を通して表現の楽しさに触れることが、\n装飾書の世界への第一歩となります。",
     "relationLink": "Gemgraphyについて",
@@ -213,7 +214,7 @@
     ],
     "expandOverline": "Expanding",
     "expandTitle": "表現の広がり",
-    "expandBody1": "Beadsgraphyは個人の楽しみとしてだけでなく、\n文化体験や教育の場でも活用されています。",
+    "expandBody1": "Beadsgraphy®は個人の楽しみとしてだけでなく、\n文化体験や教育の場でも活用されています。",
     "expandBody2": "創作の楽しさを共有することで、\n表現の喜びが自然に広がっていきます。",
     "ctaTitle": "体験について",
     "ctaBody": "体験プログラムやワークショップの詳細については、お気軽にお問い合わせください。",
@@ -221,6 +222,7 @@
   },
   "artist": {
     "heroTitle": "認定作家",
+    "heroTitleSub": "Certified Artists",
     "heroLead": "装飾書という表現は、\n一人の探求から始まりました。",
     "heroDesc": "書の静けさに、光と素材を重ねる。\nその試行錯誤の中から生まれたのが、装飾書です。",
     "introBody": "この表現は、思想と制作基準を共有する作家によって継承されます。",
@@ -248,7 +250,7 @@
     "heroSubtitle": "作品ギャラリー",
     "overline": "Works",
     "title": "作品の世界",
-    "desc": "2015年より続く、装飾書・Gemgraphy・Beadsgraphyの代表作品を年代ごとにご覧いただけます。"
+    "desc": "2015年より続く、装飾書・Gemgraphy・Beadsgraphy®の代表作品を年代ごとにご覧いただけます。"
   },
   "contact": {
     "heroTitle": "Contact",

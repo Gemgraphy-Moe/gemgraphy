@@ -1,4 +1,4 @@
-{
+﻿{
     "site": {
         "title": "Gemgraphy — The Art of Sōshoku-sho",
         "description": "A new form of artistic expression rooted in Japanese calligraphy culture"
@@ -7,7 +7,7 @@
         "home": "Home",
         "soshokuSho": "Sōshoku-sho",
         "gemgraphy": "Gemgraphy",
-        "beadsgraphy": "Beadsgraphy",
+        "beadsgraphy": "Beadsgraphy®",
         "artist": "The Artists",
         "gallery": "Gallery",
         "contact": "Contact"
@@ -22,7 +22,7 @@
         "introOverline": "Art Form",
         "introTitle": "Into the World of Sōshoku-sho",
         "introDesc1": "Born from the culture of Japanese calligraphy,\nan expressive art that gives form to emotion through light and material — Sōshoku-sho.",
-        "introDesc2": "Within it lives\nGemgraphy, pursuing deeper artistic expression, and\nBeadsgraphy, opening the door to experiential engagement.",
+        "introDesc2": "Within it lives\nGemgraphy, pursuing deeper artistic expression, and\nBeadsgraphy®, opening the door to experiential engagement.",
         "introDesc3": "Into a world where stillness and radiance harmonize.",
         "pillar1Overline": "Expression Genre",
         "pillar1Title": "Sōshoku-sho",
@@ -31,7 +31,7 @@
         "pillar2Title": "Gemgraphy",
         "pillar2Desc": "The artistic core — a fusion of symbolism, material, and spatial awareness.",
         "pillar3Overline": "Experience",
-        "pillar3Title": "Beadsgraphy",
+        "pillar3Title": "Beadsgraphy®",
         "pillar3Desc": "An experiential gateway into the world of expressive art.",
         "ctaText": "Begin with a conversation"
     },
@@ -61,8 +61,8 @@
         "systemDesc": "Decorative Calligraphy is a creative genre that integrates calligraphic beauty with material expression.\nWithin this genre exist forms that differ in depth of expression and purpose.",
         "gemgraphyTitle": "Gemgraphy",
         "gemgraphyDesc": "An advanced form of Decorative Calligraphy.\nIt incorporates natural gemstones, refined materials, metal leaf, light, and dimensional structure to achieve deeper expression.\n\nCreated by the founder and certified artisans, Gemgraphy represents a refined artistic form capable of installation and exhibition.",
-        "beadsgraphyTitle": "Beadsgraphy",
-        "beadsgraphyDesc": "An accessible, participatory form of Decorative Calligraphy.\nUsing paper and beads, it allows individuals to experience the joy of creation and engage with the cultural expression.\n\nIt serves as an educational and cultural gateway into the art form.",
+        "beadsgraphyTitle": "Beadsgraphy®",
+        "beadsgraphyDesc":"An accessible, participatory form of Decorative Calligraphy.\nUsing paper and beads, it allows individuals to experience the joy of creation and engage with the cultural expression.\n\nIt serves as an educational and cultural gateway into the art form.",
         "spaceOverline": "In Space",
         "spaceTitle": "Decorative Calligraphy in Space",
         "spaceBody1": "Decorative Calligraphy exists not only as an artwork,\nbut as a quiet presence within space.",
@@ -88,11 +88,12 @@
         ],
         "cultureClosing": "— a new realm of artistic expression.",
         "linkGemgraphy": "About Gemgraphy",
-        "linkBeadsgraphy": "About Beadsgraphy",
+        "linkBeadsgraphy": "About Beadsgraphy®",
         "learnMore": "Learn more"
     },
     "gemgraphy": {
         "heroTitle": "Gemgraphy",
+        "heroTitleSub": "",
         "heroSub": "Where calligraphy meets light, material, and presence.",
         "heroSub2": "A refined form of Decorative Calligraphy that deepens the symbolism of a single character through natural stone, metal leaf, and dimensional structure—creating a quiet yet powerful presence in space.",
         "heroCta": "Start a Conversation",
@@ -158,17 +159,17 @@
         "ctaLink": "Inquire"
     },
     "beadsgraphy": {
-        "heroTitle": "Beadsgraphy",
+        "heroTitle": "Beadsgraphy®",
         "heroTitleSub": "",
         "heroSub": "Write. Adorn. Experience.",
         "heroSub2": "An artistic experience that transforms time spent with a character into personal expression.",
-        "whatOverline": "What is Beadsgraphy",
-        "whatTitle": "What is Beadsgraphy?",
-        "whatBody1": "Beadsgraphy is an experiential art form that introduces the expression of Decorative Calligraphy.",
+        "whatOverline": "What is Beadsgraphy®",
+        "whatTitle": "What is Beadsgraphy®?",
+        "whatBody1": "Beadsgraphy® is an experiential art form that introduces the expression of Decorative Calligraphy.",
         "whatBody2": "Participants enhance a written character using beads and decorative materials, allowing their own sense of balance and creativity to guide the composition.",
         "whatBody3": "The finished work reflects the unique process of its creation — resulting in a piece that feels personal and one of a kind.",
         "appealOverline": "Appeal",
-        "appealTitle": "The Appeal of Beadsgraphy",
+        "appealTitle": "The Appeal of Beadsgraphy®",
         "appeal1Title": "Discover the Joy of Expression",
         "appeal1Desc": "Writing and decorating invite a sense of creative freedom and self-expression.",
         "appeal2Title": "A Calm, Reflective Experience",
@@ -176,7 +177,7 @@
         "appeal3Title": "Every Piece is Unique",
         "appeal3Desc": "Even with the same materials, each person creates something entirely their own.",
         "appeal4Title": "An Accessible Entry into Artistic Expression",
-        "appeal4Desc": "Beadsgraphy offers a welcoming first step into artistic and cultural expression.",
+        "appeal4Desc": "Beadsgraphy® offers a welcoming first step into artistic and cultural expression.",
         "flowOverline": "Experience Flow",
         "flowTitle": "The Experience Process",
         "flowDesc": "Participants complete their work through a sequence of creative steps:",
@@ -190,9 +191,9 @@
         "flowClosing": "This process creates a natural opportunity to engage with one's own creative sensibility.",
         "relationOverline": "Connection",
         "relationTitle": "Relationship to Gemgraphy",
-        "relationBody1": "Beadsgraphy serves as an accessible gateway into the world of Decorative Calligraphy.",
+        "relationBody1": "Beadsgraphy® serves as an accessible gateway into the world of Decorative Calligraphy.",
         "relationBody2": "For those who wish to explore deeper artistic expression, the advanced form known as Gemgraphy offers a more refined approach.",
-        "relationBody3": "Experiencing Beadsgraphy often becomes a first step into this broader artistic tradition.",
+        "relationBody3": "Experiencing Beadsgraphy® often becomes a first step into this broader artistic tradition.",
         "relationLink": "Explore Gemgraphy",
         "forOverline": "For You",
         "forTitle": "Who It's For",
@@ -214,7 +215,7 @@
         ],
         "expandOverline": "Expanding",
         "expandTitle": "Expanding Possibilities",
-        "expandBody1": "Beadsgraphy is used not only for personal enjoyment but also in cultural and educational contexts.",
+        "expandBody1": "Beadsgraphy® is used not only for personal enjoyment but also in cultural and educational contexts.",
         "expandBody2": "By sharing the experience of creating, the joy of expression naturally spreads.",
         "ctaTitle": "Experience & Workshops",
         "ctaBody": "For workshop information and program availability, please feel free to inquire.",
@@ -222,6 +223,7 @@
     },
     "artist": {
         "heroTitle": "The Artists",
+        "heroTitleSub": "認定作家",
         "heroLead": "Decorative Calligraphy began as a personal exploration.",
         "heroDesc": "Layering light and material onto the quiet discipline of Japanese calligraphy,\na new form of expression was born.",
         "introBody": "This artistic language is carried forward by artists who share its philosophy and standards.",
@@ -249,7 +251,7 @@
         "heroSubtitle": "Works",
         "overline": "Works",
         "title": "The World of Works",
-        "desc": "Explore representative works of Sōshoku-sho, Gemgraphy, and Beadsgraphy, organized by year since 2015."
+        "desc": "Explore representative works of Sōshoku-sho, Gemgraphy, and Beadsgraphy®, organized by year since 2015."
     },
     "contact": {
         "heroTitle": "Contact",
