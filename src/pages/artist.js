@@ -83,9 +83,10 @@ export function renderArtist(t) {
       <div class="hero__bg" style="background-image: url('https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=1920&q=80');"></div>
       <div class="hero__overlay"></div>
       <div class="hero__content">
+        <p class="text-overline" style="margin-bottom: var(--space-sm); color: var(--color-accent-light);">${a.heroTitleSub}</p>
         <h1 class="hero__title" style="letter-spacing: 0.08em;">${a.heroTitle}</h1>
         <div class="hero__divider"></div>
-        <p class="hero__lead">${nl(a.heroLead)}</p>
+        <p class="hero__lead">${a.heroLead}</p>
         <p class="hero__desc">${nl(a.heroDesc)}</p>
       </div>
     </section>

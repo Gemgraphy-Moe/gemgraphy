@@ -42,17 +42,21 @@ export function renderGemgraphy(t) {
     .map((item) => `<li class="expand-list__item">${item}</li>`)
     .join('');
 
+  const titleSub = g.heroTitleSub
+    ? `<p class="text-overline" style="margin-bottom: var(--space-sm); color: var(--color-accent-light);">${g.heroTitleSub}</p>`
+    : '';
+
   return `
     <!-- Hero -->
     <section class="hero hero--page">
       <div class="hero__bg" style="background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1920&q=80');"></div>
       <div class="hero__overlay"></div>
       <div class="hero__content">
+        ${titleSub}
         <h1 class="hero__title" style="font-family: var(--font-en); letter-spacing: 0.2em;">${g.heroTitle}</h1>
         <div class="hero__divider"></div>
         <p class="hero__lead">${nl(g.heroSub)}</p>
         <p class="hero__desc">${g.heroSub2}</p>
-        <a href="#/contact" class="cta-btn" style="margin-top: var(--space-xl); border-color: var(--color-accent-light); color: var(--color-text-on-dark); opacity: 0; animation: heroFadeIn 1s ease-out 1.4s forwards;">${g.heroCta}</a>
       </div>
     </section>
 
@@ -73,7 +77,7 @@ export function renderGemgraphy(t) {
     </section>
 
     <!-- Photo Break -->
-    <section class="photo-break fade-in">
+    <section class="photo-break photo-break--tall fade-in">
       <div class="photo-break__image">
         <img src="${import.meta.env.BASE_URL}image/Gemgraphy/gemgraphy-01.JPG" alt="Gemgraphy" loading="lazy" />
       </div>
@@ -131,7 +135,7 @@ export function renderGemgraphy(t) {
     </section>
 
     <!-- Photo Break -->
-    <section class="photo-break fade-in">
+    <section class="photo-break photo-break--tall fade-in">
       <div class="photo-break__image">
         <img src="${import.meta.env.BASE_URL}image/Gemgraphy/gemgraphy-03.JPEG" alt="制作" loading="lazy" />
       </div>

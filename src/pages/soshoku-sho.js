@@ -68,7 +68,7 @@ export function renderSoshokuSho(t) {
     </section>
 
     <!-- Photo Break 1 -->
-    <section class="photo-break fade-in">
+    <section class="photo-break photo-break--tall fade-in">
       <div class="photo-break__image">
         <img src="${import.meta.env.BASE_URL}image/Soshoku-sho/Soshoku-sho-01.jpg" alt="装飾書の世界" loading="lazy" />
       </div>
@@ -126,7 +126,7 @@ export function renderSoshokuSho(t) {
             <img src="${import.meta.env.BASE_URL}image/Soshoku-sho/beadsgraphy.jpg" alt="Beadsgraphy" loading="lazy" />
           </div>
           <div class="content-block__text">
-            <p class="text-overline">Beadsgraphy</p>
+            <p class="text-overline">Beadsgraphy®</p>
             <h3 class="heading-3">${s.beadsgraphyTitle}</h3>
             <hr class="divider" />
             <p class="text-body">${nl(s.beadsgraphyDesc)}</p>
@@ -137,7 +137,7 @@ export function renderSoshokuSho(t) {
     </section>
 
     <!-- Photo Break 2 -->
-    <section class="photo-break fade-in">
+    <section class="photo-break photo-break--tall fade-in">
       <div class="photo-break__image">
         <img src="${import.meta.env.BASE_URL}image/Soshoku-sho/Soshoku-sho-02.jpg" alt="光と素材" loading="lazy" />
       </div>
@@ -202,8 +202,8 @@ export function renderSoshokuSho(t) {
             <span class="nav-card__link">${s.learnMore} →</span>
           </a>
           <a href="#/beadsgraphy" class="nav-card">
-            <p class="text-overline">Beadsgraphy</p>
-            <h3 class="heading-3 heading-en">Beadsgraphy</h3>
+            <p class="text-overline">Beadsgraphy®</p>
+            <h3 class="heading-3 heading-en">Beadsgraphy®</h3>
             <span class="nav-card__link">${s.learnMore} →</span>
           </a>
         </div>

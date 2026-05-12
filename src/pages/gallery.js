@@ -6,7 +6,7 @@ export function renderGallery(t) {
 
   const galleryData = [
     { year: 2026, files: ['2026-01.JPG', '2026-02.JPG', '2026-03.jpg'] },
-    { year: 2025, files: ['2025-01.JPG', '2025-02.jpg', '2025-03.jpg', '2025-04.jpg', '2025-05.jpeg', '2025-06.jpg', '2025-07.jpg', '2025-08.JPG'] },
+    { year: 2025, files: ['2025-02.jpg', '2025-03.jpg', '2025-04.jpg', '2025-05.jpeg', '2025-06.jpg', '2025-07.jpg', '2025-08.JPG'] },
     { year: 2024, files: ['2024-01.jpg', '2024-02.jpg', '2024-03.jpg', '2024-04.JPEG', '2024-05.JPG', '2024-06.jpg', '2024-07.JPG', '2024-08.jpg', '2024-09.jpg', '2024-10.jpg'] },
     { year: 2023, files: ['2023-01.jpg', '2023-02.jpg', '2023-03.JPG', '2023-04.jpg', '2023-05.JPG', '2023-06.JPG', '2023-07.JPG', '2023-08.jpg'] },
     { year: 2022, files: ['2022-01.JPG', '2022-02.JPG', '2022-03.JPG'] },
@@ -47,6 +47,7 @@ export function renderGallery(t) {
       <div class="hero__overlay"></div>
       <div class="page-hero__content">
         <h1 class="page-hero__title">${t.gallery.heroTitle}</h1>
+        <div class="hero__divider"></div>
         <p class="page-hero__subtitle">${t.gallery.heroSubtitle}</p>
       </div>
     </section>

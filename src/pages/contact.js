@@ -13,6 +13,7 @@ export function renderContact(t) {
       <div class="hero__overlay"></div>
       <div class="page-hero__content">
         <h1 class="page-hero__title">${t.contact.heroTitle}</h1>
+        <div class="hero__divider"></div>
         <p class="page-hero__subtitle">${t.contact.heroSubtitle}</p>
       </div>
     </section>

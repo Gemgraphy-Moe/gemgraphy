@@ -77,7 +77,7 @@ export function renderBeadsgraphy(t) {
     </section>
 
     <!-- Photo Break -->
-    <section class="photo-break fade-in">
+    <section class="photo-break photo-break--tall fade-in">
       <div class="photo-break__image">
         <img src="${import.meta.env.BASE_URL}image/Beadsgraphy/beadsgraphy-01.JPEG" alt="Beadsgraphy" loading="lazy" />
       </div>
@@ -116,7 +116,7 @@ export function renderBeadsgraphy(t) {
     </section>
 
     <!-- Photo Break -->
-    <section class="photo-break fade-in">
+    <section class="photo-break photo-break--tall fade-in">
       <div class="photo-break__image">
         <img src="${import.meta.env.BASE_URL}image/Beadsgraphy/beadsgraphy-02.jpeg" alt="制作の風景" loading="lazy" />
       </div>
