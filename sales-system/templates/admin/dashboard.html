@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block title %}ダッシュボード — Gemgraphy管理{% endblock %}
+{% block nav %}
+<nav class="nav">
+  <span class="nav-brand">Gemgraphy 管理</span>
+  <div class="nav-links">
+    <a href="{{ url_for('admin_dashboard') }}">ダッシュボード</a>
+    <a href="{{ url_for('admin_upload') }}">納品書入力</a>
+    <a href="{{ url_for('admin_sales') }}">売上入力</a>
+    <a href="{{ url_for('admin_statements') }}">精算書</a>
+    <a href="{{ url_for('admin_artists') }}">作家管理</a>
+    <a href="{{ url_for('admin_logout') }}">ログアウト</a>
+  </div>
+</nav>
+{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="flex-between">
+    <h1 class="page-title" style="margin-bottom:0">ダッシュボード</h1>
+    <span class="text-muted">{{ today.strftime('%Y年%m月%d日') }}</span>
+  </div>
+  {% for cat, msg in get_flashed_messages(with_categories=true) %}
+  <div class="alerts"><div class="alert alert-{{ 'error' if cat == 'error' else 'success' }}">{{ msg }}</div></div>
+  {% endfor %}
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-label">アクティブ作家数</div>
+      <div class="stat-value">{{ artists|length }}</div>
+      <div class="stat-sub">現会期</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">今月の精算書</div>
+      <div class="stat-value">{{ recent_statements|selectattr('year','equalto',today.year)|selectattr('month','equalto',today.month)|list|length }}</div>
+      <div class="stat-sub">{{ today.year }}年{{ today.month }}月</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">クイックアクション</div>
+      <div style="margin-top:8px;display:flex;flex-direction:column;gap:8px;">
+        <a href="{{ url_for('admin_upload') }}" class="btn btn-primary btn-sm">📷 納品書を読み取る</a>
+        <a href="{{ url_for('admin_sales') }}" class="btn btn-outline btn-sm">📊 売上を入力する</a>
+      </div>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">現在の作家様一覧</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>作家名</th><th>カテゴリ</th><th>手数料</th></tr></thead>
+          <tbody>
+          {% for artist in artists %}
+          <tr>
+            <td><a href="{{ url_for('admin_artist_sales', artist_id=artist.id) }}">{{ artist.name }}</a></td>
+            <td><span class="badge badge-{{ artist.category }}">{{ artist.category_label }}</span></td>
+            <td>{{ artist.commission_rate|int }}%</td>
+          </tr>
+          {% else %}
+          <tr><td colspan="3" class="text-muted text-center">作家様が登録されていません</td></tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-16"><a href="{{ url_for('admin_artists') }}" class="btn btn-outline btn-sm">作家管理 →</a></div>
+    </div>
+    <div class="card">
+      <div class="card-title">最近の精算書</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>作家名</th><th>対象月</th><th>振込額</th><th>状態</th></tr></thead>
+          <tbody>
+          {% for s in recent_statements %}
+          <tr>
+            <td>{{ s.artist.name }}</td>
+            <td>{{ s.month_label }}</td>
+            <td class="text-right">¥{{ '{:,}'.format(s.payout_amount) }}</td>
+            <td>{% if s.sent_at %}<span class="badge badge-sent">送信済</span>{% else %}<span class="badge badge-pending">未送信</span>{% endif %}</td>
+          </tr>
+          {% else %}
+          <tr><td colspan="4" class="text-muted text-center">精算書がありません</td></tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-16"><a href="{{ url_for('admin_statements') }}" class="btn btn-outline btn-sm">精算書一覧 →</a></div>
+    </div>
+  </div>
+</div>
+{% endblock %}

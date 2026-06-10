@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block title %}精算書一覧 — Gemgraphy管理{% endblock %}
+{% block nav %}
+<nav class="nav">
+  <span class="nav-brand">Gemgraphy 管理</span>
+  <div class="nav-links">
+    <a href="{{ url_for('admin_dashboard') }}">ダッシュボード</a>
+    <a href="{{ url_for('admin_upload') }}">納品書入力</a>
+    <a href="{{ url_for('admin_sales') }}">売上入力</a>
+    <a href="{{ url_for('admin_statements') }}">精算書</a>
+    <a href="{{ url_for('admin_artists') }}">作家管理</a>
+    <a href="{{ url_for('admin_logout') }}">ログアウト</a>
+  </div>
+</nav>
+{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="flex-between">
+    <h1 class="page-title" style="margin-bottom:0">📄 精算書一覧</h1>
+    <form method="get" class="flex">
+      <input type="number" name="year" value="{{ year }}" min="2020" max="2030" style="width:80px;">
+      <span>年</span>
+      <input type="number" name="month" value="{{ month }}" min="1" max="12" style="width:60px;">
+      <span>月</span>
+      <button type="submit" class="btn btn-outline btn-sm">表示</button>
+    </form>
+  </div>
+  {% for cat, msg in get_flashed_messages(with_categories=true) %}
+  <div class="alerts"><div class="alert alert-{{ 'error' if cat == 'error' else 'success' }}">{{ msg }}</div></div>
+  {% endfor %}
+  {% if statements %}
+  {% set grand_total = statements | sum(attribute='total_sales') %}
+  {% set grand_payout = statements | sum(attribute='payout_amount') %}
+  <div class="stats" style="margin-top:20px;">
+    <div class="stat-card">
+      <div class="stat-label">{{ year }}年{{ month }}月 総売上</div>
+      <div class="stat-value">¥{{ '{:,}'.format(grand_total) }}</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">総振込額</div>
+      <div class="stat-value" style="color:var(--accent);">¥{{ '{:,}'.format(grand_payout) }}</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">精算書枚数</div>
+      <div class="stat-value">{{ statements|length }}</div>
+      <div class="stat-sub">{{ statements|selectattr('sent_at')|list|length }} 件送信済</div>
+    </div>
+  </div>
+  {% endif %}
+  <div class="card">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>作家名</th><th>カテゴリ</th><th class="text-right">販売合計</th><th class="text-right">手数料</th><th class="text-right">振込額</th><th>送信状態</th><th>PDF</th><th>操作</th></tr>
+        </thead>
+        <tbody>
+        {% for s in statements %}
+        <tr>
+          <td>{{ s.artist.name }}</td>
+          <td><span class="badge badge-{{ s.artist.category }}">{{ s.artist.category_label }}</span></td>
+          <td class="text-right">¥{{ '{:,}'.format(s.total_sales) }}</td>
+          <td class="text-right">¥{{ '{:,}'.format(s.commission_amount) }}</td>
+          <td class="text-right" style="font-weight:700;">¥{{ '{:,}'.format(s.payout_amount) }}</td>
+          <td>{% if s.sent_at %}<span class="badge badge-sent">{{ s.sent_at.strftime('%m/%d') }}送信済</span>{% else %}<span class="badge badge-pending">未送信</span>{% endif %}</td>
+          <td>{% if s.pdf_path %}<a href="{{ url_for('admin_view_pdf', statement_id=s.id) }}" class="btn btn-outline btn-sm" target="_blank">表示</a>{% else %}<span class="text-muted" style="font-size:12px;">未生成</span>{% endif %}</td>
+          <td>
+            <div class="flex" style="gap:4px;">
+              <a href="{{ url_for('admin_artist_sales', artist_id=s.artist_id, year=year, month=month) }}" class="btn btn-outline btn-sm">編集</a>
+              <a href="{{ url_for('generate_statement', artist_id=s.artist_id, year=year, month=month) }}" class="btn btn-outline btn-sm">再生成</a>
+              {% if s.pdf_path %}<a href="{{ url_for('send_statement', statement_id=s.id) }}" class="btn btn-primary btn-sm" onclick="return confirm('{{ s.artist.name }} 様にメールを送信しますか？')">送信</a>{% endif %}
+            </div>
+          </td>
+        </tr>
+        {% else %}
+        <tr><td colspan="8" style="text-align:center;padding:32px;"><p class="text-muted">{{ year }}年{{ month }}月の精算書がありません。</p><p class="text-muted" style="margin-top:8px;font-size:13px;">売上入力画面で各作家様の販売数を入力し「精算書を作成」してください。</p></td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% set statement_artist_ids = statements | map(attribute='artist_id') | list %}
+  {% set missing = artists | rejectattr('id', 'in', statement_artist_ids) | list %}
+  {% if missing %}
+  <div class="card" style="border-left:3px solid var(--accent);">
+    <div class="card-title">⚠️ 精算書未作成の作家様（{{ missing|length }}名）</div>
+    <div class="flex" style="flex-wrap:wrap;gap:8px;">
+      {% for artist in missing %}<a href="{{ url_for('admin_artist_sales', artist_id=artist.id, year=year, month=month) }}" class="btn btn-outline btn-sm">{{ artist.name }}</a>{% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

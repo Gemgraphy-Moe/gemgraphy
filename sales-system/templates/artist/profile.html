@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}プロフィール — {{ gallery_name }}{% endblock %}
+{% block nav %}
+<nav class="nav">
+  <span class="nav-brand">{{ gallery_name }}</span>
+  <div class="nav-links">
+    <a href="{{ url_for('artist_portal') }}">マイページ</a>
+    <a href="{{ url_for('artist_profile') }}">プロフィール</a>
+    <a href="{{ url_for('artist_logout') }}">ログアウト</a>
+  </div>
+</nav>
+{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="flex-between">
+    <h1 class="page-title" style="margin-bottom:0">⚙ プロフィール編集</h1>
+    <a href="{{ url_for('artist_portal') }}" class="btn btn-outline btn-sm">← マイページへ</a>
+  </div>
+  {% for cat, msg in get_flashed_messages(with_categories=true) %}
+  <div class="alerts"><div class="alert alert-{{ 'error' if cat == 'error' else 'success' }}">{{ msg }}</div></div>
+  {% endfor %}
+  <div class="card" style="max-width:520px;">
+    <form method="post">
+      <div class="form-group">
+        <label>お名前</label>
+        <input type="text" value="{{ artist.name }}" disabled style="background:var(--bg);color:var(--muted);">
+        <p class="text-muted" style="font-size:12px;margin-top:4px;">名前の変更はギャラリーまでご連絡ください。</p>
+      </div>
+      <div class="form-group">
+        <label>メールアドレス</label>
+        <input type="text" value="{{ artist.email }}" disabled style="background:var(--bg);color:var(--muted);">
+      </div>
+      <hr class="divider">
+      <div class="form-group">
+        <label>振込先口座情報</label>
+        <textarea name="bank_info" rows="4" placeholder="例：〇〇銀行 △△支店 普通 1234567 ヤマダ ハナコ">{{ artist.bank_info }}</textarea>
+        <p class="text-muted" style="font-size:12px;margin-top:4px;">精算書に記載されます。正確に入力してください。</p>
+      </div>
+      <hr class="divider">
+      <div class="card-title">パスワード変更（変更する場合のみ）</div>
+      <div class="form-group">
+        <label>現在のパスワード</label>
+        <input type="password" name="current_password" placeholder="現在のパスワード">
+      </div>
+      <div class="form-group">
+        <label>新しいパスワード</label>
+        <input type="password" name="new_password" placeholder="新しいパスワード（8文字以上推奨）">
+      </div>
+      <button type="submit" class="btn btn-primary">更新する</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
